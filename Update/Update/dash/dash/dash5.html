@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phish Buster Dashboard5</title>
+    <link rel="stylesheet" href="style.css">
+
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+    </style>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+  </head>
+  <body class="bg-white">
+    <div class="max-w-screen-2xl mx-auto min-h-screen pt-6">
+      <!-- Header -->
+      <header class="w-full mb-8 px-6">
+        <nav class="flex items-center justify-between">
+          <img src="images/logo1.png" class="md:w-[220px] w-[120px]" alt="logo" />
+
+          <h2
+            class="md:text-[26px] text-base bg-[#E8F2F9] text-[#3498DB] inter-semibold font-semibold px-4 py-2 rounded-md md:max-w-[469px] md:w-full w-[120px] text-center"
+          >
+            Dashboard
+          </h2>
+          <button
+            class="bg-[#3498DB] text-white px-2 py-2 rounded-lg font-semibold inter-semibold md:max-w-[163px] w-[160px] cursor-pointer"
+            id="logoutBtn"
+            > 
+            Log out
+          </button>
+        </nav>
+      </header>
+
+      <!-- Main Content -->
+
+      <div class="bg-slate-50">
+
+        <div class="flex lg:flex-row flex-col gap-6 mx-8 pt-5">
+          <!-- Sidebar -->
+          <div
+            class="lg:w-[309px] w-full space-y-6 text-[#3498DB] bg-[#E8F2F9] rounded-[26px] h-[777px]"
+            >
+            <div class="flex flex-col justify-center items-center px-5 pb-3 pt-5 mt-3">
+              <div
+                class="flex items-center space-x-2 justify-start px-4 py-2 bg-white rounded-3xl w-full m-3"
+              >
+                <img src="images/file.png" alt="Admin Icon" class="w-[40px] h-[40px]" />
+                <span class="ml-6 font-light inter-light text-[26px] py-2">Admin#1</span>
+              </div>
+  
+           <div class="bg-white rounded-3xl mt-5 h-[620px] p-8">
+            <nav class=" space-y-10">
+              <button 
+              id="candidatesBtn"
+                class="w-full mt-3 text-center font-light inter-light text-[26px] px-2 py-2 rounded-2xl text-white bg-[#11477B] hover:text-white duration-200 transition-all cursor-pointer border border-[#11477B]"
+              >
+                candidates
+              </button>
+              <button
+              id="interviewBtn"
+                class="w-full text-center font-light inter-light text-[26px] px-2 py-2 rounded-2xl text-[#3498DB] hover:bg-[#11477B] hover:text-white hover:border-[#11477B] duration-200 transition-all cursor-pointer border border-[#3498DB]"
+              >
+                interview
+              </button>
+              <button
+              id="phishingBtn"
+                class="w-full text-center font-light inter-light text-[26px] px-2 py-2 rounded-2xl text-[#3498DB] hover:bg-[#11477B] hover:text-white hover:border-[#11477B] duration-200 transition-all cursor-pointer border border-[#3498DB]"
+              >
+                phising
+              </button>
+              <button
+              id="messagesBtn"
+              class="w-full mb-5 text-center font-light inter-light text-[26px] px-2 py-2 rounded-2xl text-[#3498DB] hover:bg-[#11477B] hover:text-white hover:border-[#11477B] duration-200 transition-all cursor-pointer border border-[#3498DB]"
+              >
+                messages
+              </button>
+            </nav>
+  
+            <div class="mt-10 flex flex-col items-center text-xl">
+              <h2 class="text-[#3498DB] mb-4 font-bold inter-bold text-nowrap text-[26px]">Total Candidates</h2>
+              <p class="text-[80px] font-bold inter-bold text-[#11477B]"
+              style="text-shadow:5px 3px 4px rgba(0, 0, 0, 0.25);"
+              >50</p>
+            </div>
+           </div>
+            </div>
+          </div>
+  
+          <!-- Main Content Area -->
+          <div class="flex-1 mt-4 ml-3">
+            <div
+              class="flex justify-between items-center mb-14 bg-[#D4E8F680] md:p-6 p-4 rounded-[26px]"
+            >
+              <h2 class="md:text-[24px] text-sm font-bold inter-bold text-[#11477B]">
+                latest candidates
+              </h2>
+              <div class="flex space-x-4">
+                <button
+                  class="bg-white px-4 py-2 cursor-pointer rounded-[16px] text-[#11477B] font-bold inter-bold text-2xl"
+                >
+                  Day
+                </button>
+                <button class="text-black font-light inter-light text-2xl px-4 py-2 cursor-pointer">
+                  Month
+                </button>
+                <button class="text-black font-light inter-light text-2xl px-4 py-2 cursor-pointer">
+                  Year
+                </button>
+              </div>
+            </div>
+  
+            <!-- Table -->
+            <div class="overflow-auto max-w-full">
+              <table class="w-full min-w-[500px]">
+                <thead>
+                  <tr class="text-left">
+                    <th
+                      class="pb-4 text-[#11477B] font-bold inter-bold md:text-[24px] text-base pl-16"
+                    >
+                      Name
+                    </th>
+                    <th
+                      class="pb-4 text-[#11477B] font-bold inter-bold md:text-[24px] text-base pl-10"
+                    >
+                      Email
+                    </th>
+                    <th
+                      class="pb-4 text-[#11477B] font-bold inter-bold md:text-[24px] text-base pr-10"
+                    >
+                      Situation
+                    </th>
+                    <th
+                      class="pb-4 text-[#11477B] font-bold inter-bold md:text-[24px] text-base pl-10"
+                    >
+                      Date
+                    </th>
+                  </tr>
+                </thead>
+                <tbody class="bg-[#D4E8F680]">
+                  <tr class="">
+                    <td class="pb-8 text-[#11477B] ps-8 pt-14 rounded-tl-[26px] font-light inter-light text-xl">
+                      Adham mohamed
+                    </td>
+                    <td class="text-[#11477B] pb-8 pt-14 font-light inter-light text-xl">Adhammi@gmail.com</td>
+                    <td class="pb-8 pt-14">
+                      <span
+                        class="bg-[#56EC5933] text-[#12DA16] px-4 py-1 rounded-full font-bold inter-bold text-xl"
+                        >Accepted
+                      </span>
+                    </td>
+                    <td class="pb-8 pt-14 rounded-tr-[26px] text-[#11477B] font-light inter-light text-xl pl-7">
+                      19-11-2025
+                    </td>
+                  </tr>
+                  <tr class="">
+                    <td class="pb-8 text-[#11477B] ps-8 pt-5 font-light inter-light text-xl">sami ismail sami</td>
+                    <td class="pb-8 text-[#11477B] pt-5 font-light inter-light text-xl">sami15@gmail.com</td>
+                    <td class="pb-8">
+                      <span
+                        class="bg-[#EC565633] text-[#DA1512] px-5 py-1 rounded-full font-bold inter-bold text-xl"
+                        >Rejected
+                      </span>
+                    </td>
+                    <td class="pb-8 pt-5 text-[#11477B] font-light inter-light text-xl pl-7">19-11-2025</td>
+                  </tr>
+                  <tr class="">
+                    <td class="pb-8 text-[#11477B] ps-8 pt-5 font-light inter-light text-xl">sami ismail sami</td>
+                    <td class="pb-8 pt-5 text-[#11477B] font-light inter-light text-xl">sami15@gmail.com</td>
+                    <td class="pb-8">
+                      <span
+                        class="bg-[#EC565633] text-[#DA1512] px-5 py-1 rounded-full font-bold inter-bold text-xl"
+                        >Rejected
+                      </span>
+                    </td>
+                    <td class="pb-8 pt-5 text-[#11477B] font-light inter-light text-xl pl-7">19-11-2025</td>
+                  </tr>
+                  <tr class="">
+                    <td class="pb-8 pt-5 text-[#11477B] ps-8 font-light inter-light text-xl">sami ismail sami</td>
+                    <td class="pb-8 pt-5 text-[#11477B] font-light inter-light text-xl">sami15@gmail.com</td>
+                    <td class="pb-8">
+                      <span
+                        class="bg-[#DBE82033] text-[#C4D017] px-5 py-1 rounded-full font-bold inter-bold text-xl"
+                        >pending
+                      </span>
+                    </td>
+                    <td class="pb-8 pt-5 text-[#11477B] font-light inter-light text-xl pl-7">19-11-2025</td>
+                  </tr>
+                  <tr class="">
+                    <td class="pb-14 pt-5 text-[#11477B] ps-8 rounded-bl-[26px] font-light inter-light text-xl">
+                      sami ismail sami
+                    </td>
+                    <td class="pb-14 pt-5 text-[#11477B] font-light inter-light text-xl">sami15@gmail.com</td>
+                    <td class="pb-8">
+                      <span
+                        class="bg-[#EC565633] text-[#DA1512] px-5 py-1 rounded-full font-bold inter-bold text-xl"
+                        >Rejected
+                      </span>
+                    </td>
+                    <td class="pb-14 pt-5 rounded-br-[26px] text-[#11477B] font-light inter-light text-xl pl-7">
+                      19-11-2025
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+  
+            <!-- Pagination -->
+            <div class="flex justify-center space-x-8 mt-6">
+              <button
+                class="font-normal inter-normal border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs flex items-center justify-center rounded-full bg-[#3498DB] text-white"
+              >
+                1
+              </button>
+              <button
+                class="font-normal inter-normal bg-white border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs flex items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                2
+              </button>
+              <button
+                class="font-normal inter-normal bg-white border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs flex items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                3
+              </button>
+              <button
+                class="font-normal inter-normal bg-white border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs flex items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                4
+              </button>
+              <button
+                class="font-normal inter-normal bg-white border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs flex items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                5
+              </button>
+              <button
+                class="font-normal inter-normal bg-white md:flex hidden border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                6
+              </button>
+              <button
+                class="font-normal inter-normal bg-white md:flex hidden border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                7
+              </button>
+              <button
+                class="font-normal inter-normal bg-white md:flex hidden border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                8
+              </button>
+              <button
+                class="font-normal inter-normal bg-white md:flex hidden border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                9
+              </button>
+              <button
+                class="font-normal inter-normal bg-white md:flex hidden border border-[#D1D5DB] md:w-[50px] md:h-[50px] w-[30px] h-[30px] md:text-base text-xs items-center justify-center rounded-full hover:bg-[#3498DB] hover:text-white transition-all duration-150"
+              >
+                10
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="dash5.js"></script>
+  </body>
+</html>
